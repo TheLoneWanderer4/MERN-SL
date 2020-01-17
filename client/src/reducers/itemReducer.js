@@ -1,5 +1,3 @@
-import uuid from "uuid";
-
 import {
   GET_ITEMS,
   ADD_ITEM,
@@ -25,7 +23,7 @@ export default (state = initialState, action) => {
     case ADD_ITEM:
       return {
         ...state,
-        items: [{ id: uuid(), name: action.payload.name }, ...state.items]
+        items: [action.payload, ...state.items]
       };
 
     case ITEMS_LOADING:
